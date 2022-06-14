@@ -33,3 +33,6 @@ main {
   max-width: 900px;
   
 }
+#fav-color {
+  text-transform: capitalize;
+}
