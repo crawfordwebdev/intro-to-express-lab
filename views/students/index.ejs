@@ -8,16 +8,17 @@
   <title>Student List</title>
 </head>
 <body>
-  <h1>Student Classroom List</h1>
-  <h2>Classroom Size: <%= students.length%></h2>
-  <ul>
-    <% students.forEach((student, idx) => { %>
-    <li id=<%= `student-${idx + 1}` %> class="student">
-      <%= student.name %> <br>
-      Favorite Color: <%= student.color %> 
-    </li>
-    <% }) %> 
-  </ul>
-  
+  <main>
+    <h1>Student Classroom List</h1>
+    <h2>Classroom Size: <%= students.length%></h2>
+    <ul>
+      <% students.forEach((student, idx) => { %>
+      <li id=<%= `student-${idx + 1}` %> class="student">
+        <%= student.name %> <br>
+        Favorite Color: <%= student.color %> 
+      </li>
+      <% }) %> 
+    </ul>
+  </main>
 </body>
 </html>
