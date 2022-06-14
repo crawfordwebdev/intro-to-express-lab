@@ -13,14 +13,27 @@
   <main>
     <h1>Student Classroom List</h1>
     <h2>Classroom Size: <%= students.length%></h2>
-    <ul>
-      <% students.forEach((student, idx) => { %>
-      <li id=<%= `student-${idx + 1}` %> class="student">
-        <%= student.name %> <br>
-        Favorite Color: <%= student.color %> 
-      </li>
-      <% }) %> 
-    </ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Favorite Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach((student, idx) => {
+          let studentName = student.name.split(' ') %>
+          <tr id="<%= `student-${idx + 1}` %>" class="student">
+            <th scope="row"><%= idx + 1 %></th>
+            <td><%= studentName[0] %></td>
+            <td><%= studentName[1] %></td>
+            <td><%= student.color %> </td>
+        </tr>
+        <% }) %> 
+      </tbody>
+    </table>
   </main>
 </body>
 </html>
