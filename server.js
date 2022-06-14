@@ -1,5 +1,7 @@
 // import modules
 import express from 'express'
+import {students} from './data/students.js';
+
 
 // Create Express app
 const app = express()
@@ -8,12 +10,22 @@ const app = express()
 app.set('view engine', 'ejs')
 
 // Mount Middleware (app.use)
+app.use(express.static('public'));
+
 
 
 // Mount routes
 app.get('/', function(req, res) {
   res.render('index')
 })
+
+
+app.get('/students', function(req, res) {
+  res.render('students/index', {
+    students: students
+  })
+})
+
 
 // No middleware functions or routes found
 // https://expressjs.com/en/starter/faq.html
